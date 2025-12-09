@@ -22,17 +22,9 @@ st.caption("Universidad Panamericana · Campus CDMX")
 # -----------------------------------------------------------
 @st.cache_data
 def load_data():
-    # Puedes reemplazar este dataset por cualquier otro
     return pd.read_csv("data/dataset.csv")
 
-
-url="/content/drive/MyDrive/UBER dataset.xlsx"
-
-modified_url = url.replace('/edit?usp=sharing', '/export?format=xlsx')
-all_sheets = pd.read_excel(modified_url, sheet_name=None)
-type(all_sheets)
-
-df=load_data()
+df = load_data()
 
 # ---- TABS ----
 tab1, tab2, tab3 = st.tabs(["EDA", "📁 Datos", "📝 Conclusiones"])
