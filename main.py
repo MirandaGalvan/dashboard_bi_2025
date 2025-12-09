@@ -1,13 +1,45 @@
 import streamlit as st
+import pandas as pd
+import plotly.express as px
 
-st.set_page_config(page_title="Tablero BI", layout="wide")
+# -----------------------------------------------------------
+# CONFIGURACIÓN INICIAL
+# -----------------------------------------------------------
+st.set_page_config(
+    page_title="Tablero de Inteligencia de Negocios",
+    page_icon="📊",
+    layout="wide"
+)
+
+
+
+
+st.title("📊 Tablero Interactivo – Inteligencia de Negocios")
+st.caption("Universidad Panamericana · Campus CDMX")
+
+# -----------------------------------------------------------
+# CARGA DE DATOS
+# -----------------------------------------------------------
+@st.cache_data
+def load_data():
+    # Puedes reemplazar este dataset por cualquier otro
+    return pd.read_csv("data/dataset.csv")
+
+
+url="/content/drive/MyDrive/UBER dataset.xlsx"
+
+modified_url = url.replace('/edit?usp=sharing', '/export?format=xlsx')
+all_sheets = pd.read_excel(modified_url, sheet_name=None)
+type(all_sheets)
+
+df=load_data()
 
 # ---- TABS ----
-tab1, tab2, tab3 = st.tabs(["📊 Dashboard", "📁 Datos", "📝 Conclusiones"])
+tab1, tab2, tab3 = st.tabs(["EDA", "📁 Datos", "📝 Conclusiones"])
 
 # ---- TAB 1 ----
 with tab1:
-    st.title("📊 Dashboard")
+    st.title("Exploracion general del dataset")
     st.write("Visualizaciones principales del proyecto.")
     st.metric("Ingresos", "$120,000")
     st.metric("Ocupación", "87%")
