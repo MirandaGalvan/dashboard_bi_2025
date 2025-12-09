@@ -17,10 +17,6 @@ st.set_page_config(
 st.title("📊 Tablero Interactivo – Inteligencia de Negocios")
 st.caption("Universidad Panamericana · Campus CDMX")
 
-# -----------------------------------------------------------
-# CARGA DE DATOS
-# -----------------------------------------------------------
-@st.cache_data
 
 # ---- TABS ----
 tab1, tab2, tab3 = st.tabs(["EDA", "📁 Datos", "📝 Conclusiones"])
