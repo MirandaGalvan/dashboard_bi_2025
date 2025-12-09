@@ -21,10 +21,6 @@ st.caption("Universidad Panamericana · Campus CDMX")
 # CARGA DE DATOS
 # -----------------------------------------------------------
 @st.cache_data
-def load_data():
-    return pd.read_csv("data/dataset.csv")
-
-df = load_data()
 
 # ---- TABS ----
 tab1, tab2, tab3 = st.tabs(["EDA", "📁 Datos", "📝 Conclusiones"])
