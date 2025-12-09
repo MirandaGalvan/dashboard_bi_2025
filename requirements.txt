@@ -1,5 +1,6 @@
 # Aqui colocaremos todas las bibliotecas que se necesitan instalar.
+streamlit==1.39.0
 pandas
 numpy
 matplotlib
-
+seaborn
