@@ -1,2 +1,4 @@
 import streamlit as st
-st.writte("hola mundo")
+
+st.title("Hola desde Streamlit 🎉")
+st.write("Este es mi primer dashboard")
